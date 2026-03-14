@@ -309,19 +309,24 @@ a { color: inherit; }
 }
 
 .product-photo {
-  width: 100%;
-  height: 250px;
+  width: min(100%, 240px);
+  aspect-ratio: 1 / 1;
+  height: auto;
   object-fit: cover;
   display: block;
+  margin: 0 auto;
   filter: saturate(0.88) contrast(0.96);
+  border: 2px solid #f0e5d8;
+  background: #eadfce;
 }
 
-.photo-shape-a { clip-path: polygon(7% 6%, 94% 2%, 100% 78%, 90% 100%, 5% 93%, 0 20%); border-radius: 42% 58% 49% 51% / 40% 48% 52% 60%; }
-.photo-shape-b { clip-path: polygon(4% 9%, 89% 0, 100% 31%, 93% 92%, 8% 100%, 0 64%); border-radius: 58% 42% 55% 45% / 45% 56% 44% 55%; }
-.photo-shape-c { clip-path: polygon(12% 0, 100% 9%, 96% 89%, 19% 100%, 0 46%); border-radius: 39% 61% 42% 58% / 57% 39% 61% 43%; }
-.photo-shape-d { clip-path: polygon(0 12%, 82% 0, 100% 52%, 85% 100%, 6% 95%, 0 44%); border-radius: 47% 53% 60% 40% / 52% 41% 59% 48%; }
-.photo-shape-e { clip-path: polygon(8% 2%, 93% 8%, 100% 86%, 79% 100%, 2% 90%, 0 28%); border-radius: 61% 39% 50% 50% / 43% 58% 42% 57%; }
-.photo-shape-f { clip-path: polygon(4% 14%, 83% 1%, 100% 36%, 100% 85%, 17% 99%, 0 52%); border-radius: 45% 55% 44% 56% / 61% 44% 56% 39%; }
+/* Icon-like organic boundaries (no hard boxes) */
+.photo-shape-a { border-radius: 54% 46% 42% 58% / 47% 61% 39% 53%; transform: rotate(-2deg); }
+.photo-shape-b { border-radius: 42% 58% 55% 45% / 56% 42% 58% 44%; transform: rotate(1.5deg); }
+.photo-shape-c { border-radius: 60% 40% 48% 52% / 44% 58% 42% 56%; transform: rotate(-1.2deg); }
+.photo-shape-d { border-radius: 46% 54% 60% 40% / 53% 41% 59% 47%; transform: rotate(2deg); }
+.photo-shape-e { border-radius: 58% 42% 50% 50% / 45% 60% 40% 55%; transform: rotate(-1.6deg); }
+.photo-shape-f { border-radius: 44% 56% 46% 54% / 62% 40% 60% 38%; transform: rotate(1deg); }
 
 .product-meta {
   padding: 0.8rem 0.2rem 0.6rem;
@@ -366,12 +371,16 @@ a { color: inherit; }
 }
 
 .story-image {
-  width: 100%;
-  max-width: 520px;
+  width: min(100%, 360px);
+  aspect-ratio: 1 / 1;
+  max-width: 360px;
   justify-self: center;
-  height: clamp(280px, 54vw, 460px);
+  height: auto;
   object-fit: cover;
+  display: block;
   filter: saturate(0.9) contrast(0.95);
+  border: 2px solid #efe2d3;
+  background: #eadfce;
 }
 
 .story-copy {
