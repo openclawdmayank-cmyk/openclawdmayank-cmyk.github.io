@@ -79,26 +79,78 @@
         </div>
       </section>
 
-      <section class="section alt">
+      <section class="section alt reveal">
         <div class="container">
           <div class="dynamic-head">
             <h2>What’s next</h2>
             <p class="live-note" id="liveNote"></p>
           </div>
           <div class="cards-grid">
-            <article class="card">
+            <article class="card reveal">
               <h3>Collections</h3>
               <p>Future product pages can spotlight mug, bowl, and serving sets with process notes.</p>
             </article>
-            <article class="card">
+            <article class="card reveal">
               <h3>Journal</h3>
               <p>Share kiln tests, glaze studies, and studio updates to build audience connection.</p>
             </article>
-            <article class="card">
+            <article class="card reveal">
               <h3>Stockists</h3>
               <p>Add retail partners and market schedule as NABe expands across Bay Area pop-ups.</p>
             </article>
           </div>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="container dynamic-grid">
+          <article class="card glaze-lab">
+            <h2>Glaze Lab</h2>
+            <p class="muted">Try different glaze moods on the hero vessel.</p>
+            <div class="swatches" id="swatches">
+              <button class="swatch active" data-glaze="earth" aria-label="Earth glaze"></button>
+              <button class="swatch" data-glaze="mist" aria-label="Mist glaze"></button>
+              <button class="swatch" data-glaze="forest" aria-label="Forest glaze"></button>
+              <button class="swatch" data-glaze="night" aria-label="Night glaze"></button>
+            </div>
+          </article>
+
+          <article class="card palette-builder">
+            <h2>Build Your Bowl Palette</h2>
+            <p class="muted">Pick a clay + glaze combo. We’ll suggest a vibe.</p>
+            <div class="palette-controls">
+              <label>
+                Clay tone
+                <select id="clayTone">
+                  <option value="warm">Warm terracotta</option>
+                  <option value="neutral">Neutral stone</option>
+                  <option value="dark">Dark iron</option>
+                </select>
+              </label>
+              <label>
+                Glaze finish
+                <select id="glazeFinish">
+                  <option value="matte">Matte</option>
+                  <option value="satin">Satin</option>
+                  <option value="gloss">Gloss</option>
+                </select>
+              </label>
+            </div>
+            <p class="palette-output" id="paletteOutput">Palette vibe: Warm + matte = cozy morning ritual.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section order-status-section reveal" aria-live="polite">
+        <div class="container">
+          <article class="order-status-card">
+            <h2>Order Fulfillment Status</h2>
+            <div class="status-row">
+              <span class="status-dot" id="statusDot"></span>
+              <p class="status-text" id="statusText">Checking queue…</p>
+            </div>
+            <p class="muted" id="statusDetail"></p>
+          </article>
         </div>
       </section>
     </main>
