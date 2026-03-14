@@ -309,24 +309,21 @@ a { color: inherit; }
 }
 
 .product-photo {
-  width: min(100%, 240px);
+  width: min(100%, 250px);
   aspect-ratio: 1 / 1;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
   margin: 0 auto;
-  filter: saturate(0.88) contrast(0.96);
-  border: 2px solid #f0e5d8;
-  background: #eadfce;
 }
 
-/* Icon-like organic boundaries (no hard boxes) */
-.photo-shape-a { border-radius: 54% 46% 42% 58% / 47% 61% 39% 53%; transform: rotate(-2deg); }
-.photo-shape-b { border-radius: 42% 58% 55% 45% / 56% 42% 58% 44%; transform: rotate(1.5deg); }
-.photo-shape-c { border-radius: 60% 40% 48% 52% / 44% 58% 42% 56%; transform: rotate(-1.2deg); }
-.photo-shape-d { border-radius: 46% 54% 60% 40% / 53% 41% 59% 47%; transform: rotate(2deg); }
-.photo-shape-e { border-radius: 58% 42% 50% 50% / 45% 60% 40% 55%; transform: rotate(-1.6deg); }
-.photo-shape-f { border-radius: 44% 56% 46% 54% / 62% 40% 60% 38%; transform: rotate(1deg); }
+/* Icon-like object silhouettes (transparent background) */
+.photo-shape-a { transform: rotate(-2deg); }
+.photo-shape-b { transform: rotate(1.5deg); }
+.photo-shape-c { transform: rotate(-1.2deg); }
+.photo-shape-d { transform: rotate(2deg); }
+.photo-shape-e { transform: rotate(-1.6deg); }
+.photo-shape-f { transform: rotate(1deg); }
 
 .product-meta {
   padding: 0.8rem 0.2rem 0.6rem;
@@ -376,11 +373,8 @@ a { color: inherit; }
   max-width: 360px;
   justify-self: center;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
-  filter: saturate(0.9) contrast(0.95);
-  border: 2px solid #efe2d3;
-  background: #eadfce;
 }
 
 .story-copy {
