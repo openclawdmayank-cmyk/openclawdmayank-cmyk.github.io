@@ -102,25 +102,48 @@ const statusDot = document.getElementById('statusDot');
 const statusText = document.getElementById('statusText');
 const statusDetail = document.getElementById('statusDetail');
 
-function updateBacklogStatus() {
+function applyBacklogStatus(payload) {
   if (!statusDot || !statusText || !statusDetail) return;
 
-  const hour = new Date().getHours();
-  const pseudoBacklog = (hour * 7 + 11) % 21; // deterministic, changes through day
+  const level = (payload?.backlogLevel || 'moderate').toLowerCase();
+  const queueCount = Number(payload?.queueCount ?? 0);
+  const eta = payload?.eta || '2–4 days';
+  const note = payload?.note ? ` • ${payload.note}` : '';
+  const updatedAt = payload?.updatedAt
+    ? ` • updated ${new Date(payload.updatedAt).toLocaleString([], { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })}`
+    : '';
 
   statusDot.classList.remove('yellow', 'red');
 
-  if (pseudoBacklog <= 7) {
+  if (level === 'low' || level === 'green') {
     statusText.textContent = 'Low backlog';
-    statusDetail.textContent = `${pseudoBacklog} orders in queue • estimated ship in 1–2 days`;
-  } else if (pseudoBacklog <= 14) {
-    statusDot.classList.add('yellow');
-    statusText.textContent = 'Moderate backlog';
-    statusDetail.textContent = `${pseudoBacklog} orders in queue • estimated ship in 2–4 days`;
-  } else {
+  } else if (level === 'high' || level === 'red') {
     statusDot.classList.add('red');
     statusText.textContent = 'High backlog';
-    statusDetail.textContent = `${pseudoBacklog} orders in queue • estimated ship in 4–6 days`;
+  } else {
+    statusDot.classList.add('yellow');
+    statusText.textContent = 'Moderate backlog';
+  }
+
+  statusDetail.textContent = `${queueCount} orders in queue • estimated ship in ${eta}${note}${updatedAt}`;
+}
+
+async function updateBacklogStatus() {
+  if (!statusDot || !statusText || !statusDetail) return;
+
+  try {
+    const res = await fetch('./data/order-status.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const payload = await res.json();
+    applyBacklogStatus(payload);
+  } catch {
+    // graceful fallback if JSON is missing/unavailable
+    applyBacklogStatus({
+      backlogLevel: 'moderate',
+      queueCount: 10,
+      eta: '2–4 days',
+      note: 'Status feed temporarily unavailable',
+    });
   }
 }
 
