@@ -33,8 +33,30 @@
         <h1>Products for daily rituals</h1>
         <p class="lead">A neat starter lineup to preview NABe’s visual merchandising and product storytelling.</p>
 
-        <section class="products-grid" aria-label="Mock products">
-          <article class="product-card">
+        <section class="product-toolbar" aria-label="Product controls">
+          <div class="chip-group" role="group" aria-label="Filter by category">
+            <button class="chip active" data-filter="all">All</button>
+            <button class="chip" data-filter="mugs">Mugs & Cups</button>
+            <button class="chip" data-filter="bowls">Bowls</button>
+            <button class="chip" data-filter="serveware">Serveware</button>
+            <button class="chip" data-filter="sets">Sets</button>
+          </div>
+
+          <label class="sort-wrap" for="sortSelect">
+            Sort
+            <select id="sortSelect" aria-label="Sort products">
+              <option value="featured">Featured</option>
+              <option value="price-asc">Price: Low to high</option>
+              <option value="price-desc">Price: High to low</option>
+              <option value="name-asc">Name: A to Z</option>
+            </select>
+          </label>
+        </section>
+
+        <p class="result-count" id="resultCount">6 products</p>
+
+        <section class="products-grid" id="productsGrid" aria-label="Mock products">
+          <article class="product-card" data-category="mugs" data-price="42" data-name="Kyoto Morning Mug" data-featured="1">
             <div class="product-visual glaze-earth"></div>
             <div class="product-meta">
               <h2>Kyoto Morning Mug</h2>
@@ -46,7 +68,7 @@
             </div>
           </article>
 
-          <article class="product-card">
+          <article class="product-card" data-category="bowls" data-price="56" data-name="Cloud Noodle Bowl" data-featured="2">
             <div class="product-visual glaze-mist"></div>
             <div class="product-meta">
               <h2>Cloud Noodle Bowl</h2>
@@ -58,7 +80,7 @@
             </div>
           </article>
 
-          <article class="product-card">
+          <article class="product-card" data-category="sets" data-price="64" data-name="Moss Tea Pair" data-featured="3">
             <div class="product-visual glaze-forest"></div>
             <div class="product-meta">
               <h2>Moss Tea Pair</h2>
@@ -70,7 +92,7 @@
             </div>
           </article>
 
-          <article class="product-card">
+          <article class="product-card" data-category="serveware" data-price="72" data-name="Midnight Serving Plate" data-featured="4">
             <div class="product-visual glaze-night"></div>
             <div class="product-meta">
               <h2>Midnight Serving Plate</h2>
@@ -82,7 +104,7 @@
             </div>
           </article>
 
-          <article class="product-card">
+          <article class="product-card" data-category="sets" data-price="118" data-name="Daily Rice Bowl Set" data-featured="5">
             <div class="product-visual glaze-earth"></div>
             <div class="product-meta">
               <h2>Daily Rice Bowl Set</h2>
@@ -94,7 +116,7 @@
             </div>
           </article>
 
-          <article class="product-card">
+          <article class="product-card" data-category="serveware" data-price="68" data-name="Studio Pour Carafe" data-featured="6">
             <div class="product-visual glaze-mist"></div>
             <div class="product-meta">
               <h2>Studio Pour Carafe</h2>

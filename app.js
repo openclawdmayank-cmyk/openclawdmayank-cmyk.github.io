@@ -168,3 +168,52 @@ if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches && reve
 } else {
   revealEls.forEach((el) => el.classList.add('in-view'));
 }
+
+const productsGrid = document.getElementById('productsGrid');
+const resultCount = document.getElementById('resultCount');
+const sortSelect = document.getElementById('sortSelect');
+const filterButtons = document.querySelectorAll('.chip[data-filter]');
+
+if (productsGrid && sortSelect && filterButtons.length) {
+  const productCards = Array.from(productsGrid.querySelectorAll('.product-card'));
+  let activeFilter = 'all';
+
+  const sorters = {
+    featured: (a, b) => Number(a.dataset.featured) - Number(b.dataset.featured),
+    'price-asc': (a, b) => Number(a.dataset.price) - Number(b.dataset.price),
+    'price-desc': (a, b) => Number(b.dataset.price) - Number(a.dataset.price),
+    'name-asc': (a, b) => (a.dataset.name || '').localeCompare(b.dataset.name || ''),
+  };
+
+  function applyProductView() {
+    const selectedSort = sortSelect.value;
+
+    productCards.forEach((card) => {
+      const category = card.dataset.category;
+      const visible = activeFilter === 'all' || category === activeFilter;
+      card.classList.toggle('is-hidden', !visible);
+    });
+
+    productCards
+      .slice()
+      .sort(sorters[selectedSort] || sorters.featured)
+      .forEach((card) => productsGrid.appendChild(card));
+
+    const visibleCount = productCards.filter((card) => !card.classList.contains('is-hidden')).length;
+    if (resultCount) {
+      resultCount.textContent = `${visibleCount} product${visibleCount === 1 ? '' : 's'}`;
+    }
+  }
+
+  filterButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach((el) => el.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilter = btn.dataset.filter || 'all';
+      applyProductView();
+    });
+  });
+
+  sortSelect.addEventListener('change', applyProductView);
+  applyProductView();
+}
