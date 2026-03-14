@@ -91,7 +91,8 @@ a { color: inherit; }
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  padding: 0.45rem 0.95rem 0.4rem;
+  margin: 0;
+  padding: 0.5rem 0.95rem;
   line-height: 1.2;
   color: #5a4d41;
   font-size: 0.9rem;
