@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420" fill="none">
+  <ellipse cx="210" cy="350" rx="112" ry="16" fill="#000" opacity=".10"/>
+  <defs>
+    <linearGradient id="mugBody" x1="116" y1="90" x2="284" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F9F6F1"/>
+      <stop offset="1" stop-color="#DDD0C2"/>
+    </linearGradient>
+  </defs>
+  <rect x="112" y="86" width="180" height="240" rx="56" fill="url(#mugBody)"/>
+  <path d="M296 148h18c26 0 42 18 42 42s-16 42-42 42h-18" stroke="#E6DBCF" stroke-width="16" stroke-linecap="round"/>
+  <ellipse cx="202" cy="102" rx="70" ry="14" fill="#EDE4DA"/>
+  <circle cx="170" cy="214" r="4" fill="#D14A4A"/>
+  <circle cx="184" cy="226" r="3" fill="#5A7AD9"/>
+  <circle cx="198" cy="210" r="2.8" fill="#E1B83C"/>
+  <circle cx="214" cy="218" r="3.4" fill="#5EB68A"/>
+  <circle cx="231" cy="209" r="2.6" fill="#8E6BC7"/>
+  <circle cx="244" cy="222" r="2.8" fill="#DB6C3F"/>
+</svg>

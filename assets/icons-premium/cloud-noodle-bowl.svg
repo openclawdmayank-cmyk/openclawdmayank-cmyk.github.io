@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420" fill="none">
+  <ellipse cx="210" cy="348" rx="126" ry="18" fill="#000" opacity=".10"/>
+  <defs>
+    <linearGradient id="bowlBody" x1="92" y1="150" x2="328" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8F4EE"/>
+      <stop offset="1" stop-color="#CBC1B5"/>
+    </linearGradient>
+  </defs>
+  <path d="M74 170h272l-24 98c-8 34-36 56-70 56h-84c-34 0-62-22-70-56l-24-98Z" fill="url(#bowlBody)"/>
+  <ellipse cx="210" cy="170" rx="136" ry="28" fill="#EFE8DE"/>
+  <path d="M114 184c20 12 38 18 58 18s40-6 60-18" stroke="#C3B2A2" stroke-width="5" opacity=".45"/>
+</svg>

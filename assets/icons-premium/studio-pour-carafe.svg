@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420" fill="none">
+  <ellipse cx="210" cy="350" rx="110" ry="16" fill="#000" opacity=".1"/>
+  <defs>
+    <linearGradient id="carafe" x1="156" y1="90" x2="268" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F1EBE3"/>
+      <stop offset="1" stop-color="#BCAD9E"/>
+    </linearGradient>
+  </defs>
+  <path d="M166 82h88l-12 40 40 24v148c0 20-16 36-36 36h-72c-20 0-36-16-36-36V146l40-24-12-40Z" fill="url(#carafe)"/>
+  <path d="M240 130h54c22 0 40 14 40 32s-18 32-40 32h-16" stroke="#DED3C8" stroke-width="14" stroke-linecap="round"/>
+</svg>

@@ -315,15 +315,16 @@ a { color: inherit; }
   object-fit: contain;
   display: block;
   margin: 0 auto;
+  filter: drop-shadow(0 18px 18px rgba(39, 31, 24, 0.12));
 }
 
 /* Icon-like object silhouettes (transparent background) */
-.photo-shape-a { transform: rotate(-2deg); }
-.photo-shape-b { transform: rotate(1.5deg); }
-.photo-shape-c { transform: rotate(-1.2deg); }
-.photo-shape-d { transform: rotate(2deg); }
-.photo-shape-e { transform: rotate(-1.6deg); }
-.photo-shape-f { transform: rotate(1deg); }
+.photo-shape-a { transform: rotate(-1.4deg); }
+.photo-shape-b { transform: rotate(1deg); }
+.photo-shape-c { transform: rotate(-0.8deg); }
+.photo-shape-d { transform: rotate(1.2deg); }
+.photo-shape-e { transform: rotate(-1deg); }
+.photo-shape-f { transform: rotate(0.7deg); }
 
 .product-meta {
   padding: 0.8rem 0.2rem 0.6rem;
@@ -503,6 +504,77 @@ a { color: inherit; }
 .reveal.in-view {
   opacity: 1;
   transform: translateY(0);
+}
+
+.exp-canvas {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #fbfaf8 0%, #f8f6f2 100%);
+}
+
+.exp-layout {
+  position: relative;
+  z-index: 2;
+  min-height: 68vh;
+}
+
+.exp-lead { max-width: 56ch; }
+
+.exp-corner {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.exp-corner-top {
+  top: -90px;
+  right: -80px;
+  width: 420px;
+  height: 420px;
+  border-radius: 0 0 0 65%;
+  background:
+    radial-gradient(circle at 58% 44%, rgba(131, 164, 138, 0.34) 0 24%, transparent 25%),
+    radial-gradient(circle at 70% 54%, rgba(189, 173, 141, 0.22) 0 34%, transparent 35%),
+    repeating-radial-gradient(circle at 76% 64%, rgba(124, 113, 95, 0.11) 0 2px, transparent 2px 13px),
+    linear-gradient(140deg, rgba(246, 242, 235, 0.95), rgba(229, 238, 228, 0.65));
+  filter: blur(0.2px);
+}
+
+.exp-corner-bottom {
+  left: -90px;
+  bottom: -110px;
+  width: 460px;
+  height: 350px;
+  border-radius: 70% 30% 0 0;
+  background:
+    repeating-linear-gradient(12deg, rgba(136, 125, 108, 0.14) 0 1px, transparent 1px 12px),
+    radial-gradient(circle at 35% 45%, rgba(144, 173, 152, 0.23) 0 28%, transparent 29%),
+    linear-gradient(165deg, rgba(243, 239, 233, 0.92), rgba(225, 236, 223, 0.55));
+}
+
+.exp-panel {
+  margin-top: 1.2rem;
+  max-width: 560px;
+  background: rgba(255, 255, 255, 0.74);
+  backdrop-filter: blur(4px);
+  border: 1px solid #e6ddd3;
+  border-radius: 16px;
+  padding: 1rem 1.05rem;
+}
+
+.exp-stones {
+  margin-top: 0.9rem;
+  display: flex;
+  gap: 0.7rem;
+}
+
+.exp-stones span {
+  width: 44px;
+  height: 20px;
+  border-radius: 50% 50% 48% 52%;
+  background: linear-gradient(180deg, #d7d1c7, #b9ada0);
+  opacity: 0.9;
 }
 
 .site-footer { padding: 1.2rem 0 2rem; }
