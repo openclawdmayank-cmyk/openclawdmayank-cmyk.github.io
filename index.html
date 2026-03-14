@@ -1,20 +1,105 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hello from OpenClaw</title>
-    <style>
-      body { font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif; margin: 0; display: grid; place-items: center; min-height: 100vh; background: #0b1020; color: #e6edf3; }
-      .card { padding: 28px 32px; border: 1px solid #30363d; border-radius: 14px; background: #161b22; text-align: center; }
-      h1 { margin: 0 0 8px; }
-      p { margin: 0; color: #9da7b3; }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NABe Ceramics — Kyoto-inspired modern ceramics</title>
+    <meta
+      name="description"
+      content="NABe Ceramics creates calm, tactile tableware inspired by Japanese minimalism and Bay Area warmth."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="card">
-      <h1>Hello, world 👋</h1>
-      <p>GitHub Pages deploy test from Jarvis.</p>
-    </div>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="./index.html" class="logo">NABe</a>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="./index.html" aria-current="page">Home</a></li>
+            <li><a href="./inspiration.html">Inspiration</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <p class="eyebrow">Kyoto calm, Bay Area soul</p>
+            <h1>Modern ceramics for everyday rituals.</h1>
+            <p class="lead">
+              NABe is Naomi’s ceramic practice focused on clean forms, soft textures, and quiet moments at home.
+            </p>
+            <div class="hero-cta">
+              <a class="btn" href="./inspiration.html">View design inspirations</a>
+              <a class="link" href="#story">Read the story</a>
+            </div>
+          </div>
+          <div class="hero-vessel" aria-hidden="true">
+            <div class="vessel-shape"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="story">
+        <div class="container split">
+          <div>
+            <h2>The meaning of NABe</h2>
+            <p>
+              <strong>NABe</strong> carries two meanings: Naomi’s initials and <em>nabe</em> (鍋), the Japanese word for claypot.
+              It reflects both personal authorship and the warmth of shared meals.
+            </p>
+            <p>
+              The brand language is intentionally minimal: rounded silhouettes, generous white space, and earthy tones that let the clay be the hero.
+            </p>
+          </div>
+          <aside class="card">
+            <h3>Brand principles</h3>
+            <ul>
+              <li>Functional beauty over decoration</li>
+              <li>Soft contrasts and natural textures</li>
+              <li>Objects designed for daily use</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="container">
+          <h2>What’s next</h2>
+          <div class="cards-grid">
+            <article class="card">
+              <h3>Collections</h3>
+              <p>Future product pages can spotlight mug, bowl, and serving sets with process notes.</p>
+            </article>
+            <article class="card">
+              <h3>Journal</h3>
+              <p>Share kiln tests, glaze studies, and studio updates to build audience connection.</p>
+            </article>
+            <article class="card">
+              <h3>Stockists</h3>
+              <p>Add retail partners and market schedule as NABe expands across Bay Area pop-ups.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© <span id="year"></span> NABe Ceramics</p>
+        <p class="muted">Built with a mobile-first, extensible structure.</p>
+      </div>
+    </footer>
+
+    <script src="./app.js"></script>
   </body>
 </html>
