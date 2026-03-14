@@ -30,6 +30,10 @@
     </header>
 
     <main>
+      <section class="motion-banner" aria-label="Studio updates">
+        <div class="banner-track" id="bannerTrack"></div>
+      </section>
+
       <section class="hero">
         <div class="container hero-grid">
           <div>
@@ -44,7 +48,10 @@
             </div>
           </div>
           <div class="hero-vessel" aria-hidden="true">
-            <div class="vessel-shape"></div>
+            <div class="vessel-shape" id="vesselShape"></div>
+            <div class="orbital-spark spark-1"></div>
+            <div class="orbital-spark spark-2"></div>
+            <div class="orbital-spark spark-3"></div>
           </div>
         </div>
       </section>
@@ -74,7 +81,10 @@
 
       <section class="section alt">
         <div class="container">
-          <h2>What’s next</h2>
+          <div class="dynamic-head">
+            <h2>What’s next</h2>
+            <p class="live-note" id="liveNote"></p>
+          </div>
           <div class="cards-grid">
             <article class="card">
               <h3>Collections</h3>
@@ -96,7 +106,7 @@
     <footer class="site-footer">
       <div class="container footer-wrap">
         <p>© <span id="year"></span> NABe Ceramics</p>
-        <p class="muted">Built with a mobile-first, extensible structure.</p>
+        <p class="muted" id="footerMood">Built with a mobile-first, extensible structure.</p>
       </div>
     </footer>
 
