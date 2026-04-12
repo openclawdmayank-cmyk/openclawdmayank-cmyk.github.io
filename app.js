@@ -36,7 +36,7 @@ function updateDynamicText() {
 
   if (footerMood) {
     const weekday = now.toLocaleDateString([], { weekday: 'long' });
-    footerMood.textContent = `Built with a mobile-first, extensible structure • ${weekday} studio pulse`;
+    footerMood.textContent = `Built with a mobile-first, extensible structure · Updated 2026 • ${weekday} studio pulse`;
   }
 }
 
